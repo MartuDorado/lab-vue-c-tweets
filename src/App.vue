@@ -1,6 +1,11 @@
 <template>
   <div class="app">
-    <Tweet :tweet="tweets[0]" />
+    <ul class="tweet-list">
+      <li v-for="(tweet, index) in tweets" :key="tweet.user.name">
+        <Tweet :tweet ="tweets[index]"></Tweet>
+      </li>
+    </ul>  
+    
   </div>
 </template>
 
@@ -90,6 +95,9 @@
 
   .app {
     padding: 20px;
+  }
+  .tweet-list{
+    list-style: none;
   }
 
   .tweet {
